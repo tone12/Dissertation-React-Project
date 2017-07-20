@@ -188,11 +188,13 @@ input[disabled] {
 }
 input[type=checkbox],
 input[type=radio] {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   padding: 0;
 }
 input[type=search] {
   -webkit-appearance: textfield;
+  -webkit-box-sizing: content-box;
   box-sizing: content-box;
 }
 input[type=search]::-webkit-search-cancel-button,
@@ -226,6 +228,7 @@ input::-moz-focus-inner {
   height: 0;
 }
 * {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 html {
@@ -278,26 +281,21 @@ header.top h1 {
   font-size: 4.5rem;
   line-height: 0.7;
   display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
   padding-bottom: 10px;
 }
 header.top h1 .logo {
   display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
-  -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
   background: url("images/spearhead-logo.png") center no-repeat;
@@ -344,7 +342,6 @@ header.top a {
 }
 .spearhead-gaming {
   display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   height: 90vh;
@@ -358,7 +355,6 @@ header.top a {
 }
 .spearhead-gaming > * {
   -webkit-box-flex: 1;
-  -webkit-flex: 1 4 auto;
       -ms-flex: 1 4 auto;
           flex: 1 4 auto;
   padding: 2rem;
@@ -367,16 +363,15 @@ header.top a {
   background: #fff;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
-  box-shadow: 0px 5px 5px rgba(0,0,0,0.1);
+  -webkit-box-shadow: 0px 5px 5px rgba(0,0,0,0.1);
+          box-shadow: 0px 5px 5px rgba(0,0,0,0.1);
   overflow: scroll;
 }
 .spearhead-gaming > *:first-child {
-  -webkit-flex-shrink: 1;
-      -ms-flex-negative: 1;
-          flex-shrink: 1;
-  -webkit-flex-basis: 50%;
-      -ms-flex-preferred-size: 50%;
-          flex-basis: 50%;
+  -ms-flex-negative: 1;
+      flex-shrink: 1;
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
   -webkit-transform: translateX(50%) rotateY(6deg) translateX(-50%);
           transform: translateX(50%) rotateY(6deg) translateX(-50%);
 }
@@ -388,12 +383,10 @@ header.top a {
   min-width: 300px;
 }
 .spearhead-gaming > *:last-child {
-  -webkit-flex-shrink: 1;
-      -ms-flex-negative: 1;
-          flex-shrink: 1;
-  -webkit-flex-basis: 50%;
-      -ms-flex-preferred-size: 50%;
-          flex-basis: 50%;
+  -ms-flex-negative: 1;
+      flex-shrink: 1;
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
   -webkit-transform: translateX(-50%) rotateY(10deg) translateX(50%) scale(1.08) translateX(24px);
           transform: translateX(-50%) rotateY(10deg) translateX(50%) scale(1.08) translateX(24px);
 }
@@ -419,16 +412,13 @@ ul.order li {
   border-bottom: 1px solid #000;
   padding: 2rem 0;
   display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   font-size: 1.4rem;
   -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between;
   -webkit-box-align: center;
-  -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
 }
@@ -541,12 +531,10 @@ ul.order li span span {
   border: 2px solid #000;
   overflow: hidden;
   display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-wrap: wrap;
-      -ms-flex-wrap: wrap;
-          flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 .game-edit input,
 .game-edit textarea,
@@ -614,15 +602,12 @@ ul.order li span span {
 .menu-game .game-name {
   margin: 0;
   display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between;
   -webkit-box-align: center;
-  -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
 }
@@ -632,7 +617,6 @@ ul.order li span span {
   border: 2px solid #4f2896;
   border-radius: 5px;
   -webkit-box-pack: end;
-  -webkit-justify-content: flex-end;
       -ms-flex-pack: end;
           justify-content: flex-end;
 }
@@ -791,12 +775,10 @@ input[type=submit].facebook:after {
   border: 2px solid #000;
   overflow: hidden;
   display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-wrap: wrap;
-      -ms-flex-wrap: wrap;
-          flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   margin-bottom: 15px;
 }
 .registerForm input,
@@ -921,12 +903,10 @@ input[type=submit].facebook:after {
   border: 2px solid #000;
   overflow: hidden;
   display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-wrap: wrap;
-      -ms-flex-wrap: wrap;
-          flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 .loginForm input,
 .loginForm textarea,
