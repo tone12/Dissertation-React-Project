@@ -1,0 +1,549 @@
+// Import all partials
+@require './_*.styl'
+
+html
+  background purple2
+
+header.top
+  text-align center
+  margin-top 20px
+  height 90px
+  h1
+    font-size 4.5rem
+    line-height 0.7
+    display flex
+    justify-content center
+    padding-bottom 10px
+    
+    .logo
+      display flex
+      justify-content center
+      align-items center
+      background url('images/spearhead-logo.png') center no-repeat
+      background-size cover
+      padding 0 1rem
+      padding-right 2rem
+      position relative
+      right -0.2rem
+        
+  h3
+    margin 0
+    font-size 2rem
+    color green
+    position relative
+    display inline-block
+    padding-bottom 6px
+    span
+      background white
+      position relative
+      z-index 2
+      padding-left 1rem
+      padding-right 1rem
+    &:before, &:after
+      display block
+      z-index 1
+      background purple
+      position absolute
+      width 170%
+      height 3px
+      content ''
+      top 5px
+      margin-left -35%
+    &:after
+      top auto
+      bottom 10px
+  a
+    text-decoration none
+    color black
+      
+  
+.spearhead-gaming
+  display flex
+  height 90vh
+  max-width:1500px
+  margin 0 auto
+  margin-top 5vh
+  perspective: 1000;
+  transform-style preserve-3d
+  & > *
+    flex 1 4 auto
+    padding 2rem
+    border 0.5rem solid black
+    position relative
+    background white
+    transition all 0.3s
+    box-shadow 0px 5px 5px rgba(0,0,0,0.1)
+    overflow scroll
+    &:first-child
+      flex-shrink 1 // take 4x the extra room
+      flex-basis 50%
+      transform translateX(50%) rotateY(6deg) translateX(-50%)
+    &:nth-child(2)
+      transform translateX(-50%) rotateY(-14deg) translateX(50%)
+      border-left 0 
+      border-right 0 
+      min-width 300px
+    &:last-child
+      flex-shrink 1 // take 4x the extra room
+      flex-basis 50%
+      transform translateX(-50%) rotateY(10deg) translateX(50%) scale(1.08) translateX(24px)
+
+#main
+  background purple2
+  
+  .spearhead-gaming > *
+      transform none
+
+ul
+  list-style none
+  margin 0
+  padding 0
+  
+.order-wrap
+  overflow auto
+  .order-main
+    padding 10px
+  
+ul.order
+  // Default State
+  li
+    border-bottom 1px solid black
+    padding 2rem 0
+    display flex
+    font-size 1.4rem
+    justify-content space-between
+    align-items center
+    &:hover
+      // padding 1rem 0
+      button
+        display inline
+    button
+      border 0
+      color red
+      display none
+      line-height 1
+      padding 0
+      &:hover
+        color white
+    &.total
+      font-weight 600
+      font-size 1.5rem
+      border-bottom 3px solid black
+      border-top 3px double black
+    &.unavailable
+      text-decoration line-through
+      background lighten(red, 80%)
+    .price
+      font-size 1.2rem    
+    span
+      position relative
+      overflow hidden
+      float left // only works if it's floated?!
+      span
+        display inline-block
+        // transition all 0.5s
+          
+.removeButton
+  &:after
+    content ''
+    z-index -1
+    display block
+    background black
+    position absolute
+    width 100%
+    height 0%
+    left 0 
+    top 0
+    transition all 0.2s 
+          
+.checkoutButton
+  top 15px
+  float right
+  margin-bottom 25px
+  .icon-checkout::before
+      content '\e93f'
+      vertical-align -1px
+  
+.socialMedia
+  display relative
+  position fixed
+  text-align center
+  bottom -4rem
+  border 3px solid green
+  border-radius 3px
+  padding-top 2px
+  padding-bottom 2px
+  margin-left 2.5rem
+  background grey2
+  .social
+    li
+      display inline
+      list-style none
+      padding-left 15px
+      padding-right 15px
+      a
+        text-decoration none
+        color black
+        opacity 0.7
+        &:hover
+          color purple
+          opacity 0.9
+        &:visited
+          text-decoration none
+    .icon-facebook::before
+      content '\ea90'
+    .icon-instagram::before
+      content '\ea92'
+    .icon-twitter::before
+      content '\ea96'
+    .icon-email::before
+      content '\e945'
+
+
+.order-title, .inventory-title, .checkout-title
+  text-align center
+  font-size 3.3rem
+
+.game-edit
+  margin-bottom 20px
+  border 2px solid black
+  overflow hidden
+  display flex
+  flex-wrap wrap
+  input, textarea, select
+    width 33.33%
+    padding 10px
+    line-height 1
+    font-size 1.2rem
+    border 0
+    border-bottom 1px solid black
+    border-right 1px solid black
+    appearance none
+    border-radius 0
+    background white
+    &:focus
+      outline 0
+      background lighten(orange, 85%)
+  textarea
+    width 100%
+  input:last-of-type
+    width 100%
+  button
+    width 100%
+    border 0
+    
+
+// Menu Styles
+
+.menu-wrap
+  overflow-x hidden
+  
+.order-wrap
+  overflow-x hidden
+  
+.inventory-wrap
+  overflow-x hidden
+
+.list-of-games
+  border-top 2px solid black
+  border-bottom 1px solid black
+  padding-top 5px
+  margin-top 1rem
+  margin-bottom 1rem
+  transform translateZ(0);
+
+.menu-game
+  border-bottom 2px solid black
+  border-top 1px solid black
+  padding-bottom 2rem
+  padding-top 2rem
+  margin-bottom 5px
+  clear both
+  overflow hidden
+  p
+    margin 0
+    font-size 1.8rem
+  .game-name
+    margin 0
+    display flex
+    justify-content space-between
+    align-items center
+  .price
+    font-size 1.8rem
+    padding 3px
+    border 2px solid purple
+    border-radius 5px
+    justify-content flex-end
+  img
+    float left
+    width 150px
+    margin-right 1rem
+    
+.sampleButton
+  margin-bottom 15px
+
+.refreshButton
+  top 4px
+  float right
+  .icon-refresh::before
+    content '\ea2e'
+    vertical-align -1px
+    
+.refreshButtonLogin
+  top 10px
+  display block
+  margin-left auto
+  margin-right auto
+  .icon-refresh::before
+    content '\ea2e'
+    vertical-align -1px
+
+button, input[type=submit]
+  text-transform uppercase
+  background none
+  border 1px solid black
+  font-weight 600
+  font-size 1.5rem
+  font-family 'Open Sans'
+  transition all 0.2s
+  position relative
+  z-index 2
+  &[disabled]
+    color red
+    background white
+    border-color red
+    transform rotate(-10deg) scale(2) translateX(50%) translateY(-50%)
+    &:hover
+      color red
+      cursor not-allowed
+    &:after
+      display none
+  &:after
+    content ''
+    z-index -1
+    display block
+    background green
+    position absolute
+    width 100%
+    height 0%
+    left 0 
+    top 0
+    transition all 0.2s 
+  &:hover, &:focus
+    color white
+    outline 0
+    &:after
+      height 100%
+  // variants
+  &.warning
+    &:after
+      background red
+  &.success
+    &:after
+      background green
+  
+  &.facebook
+    border 0
+    display block
+    margin-bottom 2rem
+    width 100%
+    color white
+    padding 2rem
+    background #3864A3
+    .icon-facebook::before
+      content '\ea90'
+      font-size 2rem
+      vertical-align -2.5px
+    &:after
+      background darken(#3864A3, 20%)      
+
+// Store Selector
+
+.store-selector
+  background white
+  max-width 525px
+  margin 50px auto
+  padding 2rem 2rem 0.8rem 2rem
+  border 0.5rem solid black
+  input
+    width 100%
+    &[type="text"]
+      text-align center
+      font-size 3rem
+  header.top
+    margin 10px 0 20px 0
+    border-bottom solid 2px grey
+  .socialMedia
+    position relative
+    margin-left auto
+    margin-right auto
+    bottom 0
+    margin-top 15px
+    
+.information
+  font-size 1.5rem
+  background grey
+  color white
+  text-align center
+  border 2px solid green
+  border-radius 3px
+  padding 5px
+  
+.storeSubmit
+  &:hover
+    background green
+
+.register
+  text-align center
+
+.registerForm
+  border 2px solid black
+  overflow hidden
+  display flex
+  flex-wrap wrap
+  margin-bottom 15px
+  input, textarea, select
+    width 50%
+    padding 10px
+    line-height 1
+    font-size 1.4rem
+    border 0
+    border-bottom 1px solid black
+    border-right 1px solid black
+    appearance none
+    border-radius 0
+    background white
+    &:focus
+      outline 0
+      background lighten(orange, 85%)
+  input:last-of-type
+    width 50%
+    border-right 0px
+  button
+    width 100%
+    border 0
+    
+// Checkout
+
+.checkout-wrap
+  background white
+  max-width 55%
+  margin 70px auto
+  padding 2rem
+  border 0.5rem solid black
+  
+.purchaseForm
+  max-width 100%
+  margin-left auto
+  margin-right auto
+  padding-left 5%
+  padding-bottom 4rem
+  div
+    padding-bottom 1rem
+  input, textarea
+    display block
+    width 40%
+    padding 8px
+    line-height 1
+    font-size 1.4rem
+    border 0
+    border 1px solid black
+    appearance none
+    border-radius 0
+    background white
+    &:focus
+      outline 0
+      background lighten(green, 85%)
+  select
+    display block
+    width 40%
+    padding 4px
+    line-height 1
+    font-size 1.4rem
+    border 0
+    border 1px solid black
+    border-radius 0
+    background white
+    &:focus
+      outline 0
+      background lighten(green, 85%)
+      
+#expiryMonth
+  float left
+  width 10%
+      
+#expiryYear
+  float left
+  width 10%
+  margin-left 1rem
+  
+#securityNumber
+  width 15%
+       
+.purchaseButton
+  float right
+  bottom -2rem
+  .icon-purchase::before
+    content '\e93f'
+    vertical-align -1px
+  
+.backButton
+  float left
+  bottom 15px
+  .icon-back::before
+    content '\e967'
+    vertical-align -1px
+
+// Login
+
+.login
+  p
+    text-align center
+    font-size 1.7rem
+
+.loginSeperator
+  text-align center
+  font-size 2.3rem
+  
+.loginForm
+  border 2px solid black
+  overflow hidden
+  display flex
+  flex-wrap wrap
+  input, textarea, select
+    width 50%
+    padding 10px
+    line-height 1
+    font-size 1.4rem
+    border 0
+    border-bottom 1px solid black
+    border-right 1px solid black
+    appearance none
+    border-radius 0
+    background white
+    &:focus
+      outline 0
+      background lighten(orange, 85%)
+  input:last-of-type
+    width 50%
+    border-right 0px
+  button
+    width 100%
+    border 0
+    
+.loginFailed
+  padding-top 60px
+  text-align center
+  .logoutButton
+    margin-top 20px
+    
+.logoutButton
+  bottom 10px
+  margin-bottom 2px
+  .icon-logout::before
+    content '\ea14'
+    vertical-align -1px
+  
+.notFound
+  color white
+  margin-top 40px
